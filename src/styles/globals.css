@@ -25,23 +25,23 @@
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
 
-    /* Chart specific colors */
-    --chart-primary: 210 40% 50%;
-    --chart-secondary: 200 30% 40%;
-    --chart-background: 0 0% 100%;
-    --chart-grid: 240 4.9% 83.9%;
-    --chart-text: 240 10% 3.9%;
-    --chart-gradient-start: 210 40% 50%;
-    --chart-gradient-end: 210 40% 95%;
-    --chart-line-color: 217 91% 60%;
-    --chart-line-color-muted: 217 91% 60%;
+    /* PostHog Embedded Analytics Colors */
+    --ph-embed-chart-primary: 210 40% 50%;
+    --ph-embed-chart-secondary: 200 30% 40%;
+    --ph-embed-chart-background: 0 0% 100%;
+    --ph-embed-chart-grid: 240 4.9% 83.9%;
+    --ph-embed-chart-text: 240 10% 3.9%;
+    --ph-embed-chart-gradient-start: 210 40% 50%;
+    --ph-embed-chart-gradient-end: 210 40% 95%;
+    --ph-embed-chart-line-color: 217 91% 60%;
+    --ph-embed-chart-line-color-muted: 217 91% 60%;
 
-    /* Analytics specific colors */
-    --analytics-positive: 142 76% 36%;
-    --analytics-negative: 0 84% 60%;
-    --analytics-neutral: 240 3.8% 46.1%;
-    --analytics-fill-background: 240 4.8% 95.9%;
-    --table-fill-color: 217 91% 60%;
+    /* PostHog Embedded Analytics Metric Colors */
+    --ph-embed-positive: 142 76% 36%;
+    --ph-embed-negative: 0 84% 60%;
+    --ph-embed-neutral: 240 3.8% 46.1%;
+    --ph-embed-fill-background: 240 4.8% 95.9%;
+    --ph-embed-table-fill-color: 217 91% 60%;
   }
 
   .dark {
@@ -65,23 +65,23 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
 
-    /* Chart specific colors - dark mode */
-    --chart-primary: 210 40% 70%;
-    --chart-secondary: 200 30% 60%;
-    --chart-background: 240 10% 3.9%;
-    --chart-grid: 240 3.7% 15.9%;
-    --chart-text: 0 0% 95%;
-    --chart-gradient-start: 210 40% 70%;
-    --chart-gradient-end: 210 40% 20%;
-    --chart-line-color: 217 91% 70%;
-    --chart-line-color-muted: 217 91% 70%;
+    /* PostHog Embedded Analytics Colors - Dark Mode */
+    --ph-embed-chart-primary: 210 40% 70%;
+    --ph-embed-chart-secondary: 200 30% 60%;
+    --ph-embed-chart-background: 240 10% 3.9%;
+    --ph-embed-chart-grid: 240 3.7% 15.9%;
+    --ph-embed-chart-text: 0 0% 95%;
+    --ph-embed-chart-gradient-start: 210 40% 70%;
+    --ph-embed-chart-gradient-end: 210 40% 20%;
+    --ph-embed-chart-line-color: 217 91% 70%;
+    --ph-embed-chart-line-color-muted: 217 91% 70%;
 
-    /* Analytics specific colors - dark mode */
-    --analytics-positive: 142 70% 45%;
-    --analytics-negative: 0 84% 60%;
-    --analytics-neutral: 240 5% 64.9%;
-    --analytics-fill-background: 240 3.7% 15.9%;
-    --table-fill-color: 217 91% 70%;
+    /* PostHog Embedded Analytics Metric Colors - Dark Mode */
+    --ph-embed-positive: 142 70% 45%;
+    --ph-embed-negative: 0 84% 60%;
+    --ph-embed-neutral: 240 5% 64.9%;
+    --ph-embed-fill-background: 240 3.7% 15.9%;
+    --ph-embed-table-fill-color: 217 91% 70%;
   }
 }
 
@@ -108,15 +108,15 @@
   }
 
   .analytics-metric-positive {
-    color: hsl(var(--analytics-positive));
+    color: hsl(var(--ph-embed-positive));
   }
 
   .analytics-metric-negative {
-    color: hsl(var(--analytics-negative));
+    color: hsl(var(--ph-embed-negative));
   }
 
   .analytics-metric-neutral {
-    color: hsl(var(--analytics-neutral));
+    color: hsl(var(--ph-embed-neutral));
   }
 
   .analytics-table-fill-cell::before {
@@ -126,7 +126,7 @@
     left: 0;
     bottom: 0;
     width: calc(var(--fill-ratio) * 100%);
-    background-color: hsl(var(--table-fill-color) / 0.08);
+    background-color: hsl(var(--ph-embed-table-fill-color) / 0.08);
     border-radius: 0.125rem;
     z-index: -1;
   }

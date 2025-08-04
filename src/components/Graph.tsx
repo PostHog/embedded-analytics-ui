@@ -216,7 +216,7 @@ export function Graph({
 
               <CartesianGrid
                 strokeDasharray="3 3"
-                stroke="hsl(var(--chart-grid))"
+                stroke="hsl(var(--ph-embed-chart-grid))"
                 opacity={0.3}
               />
 
@@ -226,7 +226,7 @@ export function Graph({
                 tickLine={false}
                 tick={{
                   fontSize: 12,
-                  fill: 'hsl(var(--chart-text))',
+                  fill: 'hsl(var(--ph-embed-chart-text))',
                   opacity: 0.7,
                 }}
                 dy={10}
@@ -237,7 +237,7 @@ export function Graph({
                 tickLine={false}
                 tick={{
                   fontSize: 12,
-                  fill: 'hsl(var(--chart-text))',
+                  fill: 'hsl(var(--ph-embed-chart-text))',
                   opacity: 0.7,
                 }}
                 tickFormatter={value => formatNumber(value, 'number', true)}
@@ -247,7 +247,7 @@ export function Graph({
               <RechartsTooltip
                 content={<CustomTooltip unit={data.unit} />}
                 cursor={{
-                  stroke: 'hsl(var(--chart-primary))',
+                  stroke: 'hsl(var(--ph-embed-chart-primary))',
                   strokeWidth: 1,
                   strokeDasharray: '5 5',
                 }}

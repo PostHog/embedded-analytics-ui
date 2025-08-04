@@ -82,14 +82,14 @@ export function getChartColors() {
   };
 
   return {
-    primary: getCustomProperty('--chart-primary'),
-    secondary: getCustomProperty('--chart-secondary'),
-    background: getCustomProperty('--chart-background'),
-    grid: getCustomProperty('--chart-grid'),
-    text: getCustomProperty('--chart-text'),
-    lineColor: getCustomProperty('--chart-line-color'),
-    lineColorMuted: getCustomProperty('--chart-line-color-muted'),
-    gradientStart: getCustomProperty('--chart-gradient-start'),
-    gradientEnd: getCustomProperty('--chart-gradient-end'),
+    primary: getCustomProperty('--ph-embed-chart-primary'),
+    secondary: getCustomProperty('--ph-embed-chart-secondary'),
+    background: getCustomProperty('--ph-embed-chart-background'),
+    grid: getCustomProperty('--ph-embed-chart-grid'),
+    text: getCustomProperty('--ph-embed-chart-text'),
+    lineColor: getCustomProperty('--ph-embed-chart-line-color'),
+    lineColorMuted: getCustomProperty('--ph-embed-chart-line-color-muted'),
+    gradientStart: getCustomProperty('--ph-embed-chart-gradient-start'),
+    gradientEnd: getCustomProperty('--ph-embed-chart-gradient-end'),
   };
 }
