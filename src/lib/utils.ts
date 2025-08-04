@@ -70,13 +70,26 @@ export function getChangeDescription(
 }
 
 // Theme utilities
-export function getChartColors(isDark = false) {
+export function getChartColors() {
+  // Get CSS custom property values from the document root
+  const getCustomProperty = (property: string) => {
+    if (typeof window !== 'undefined') {
+      const style = getComputedStyle(document.documentElement);
+      const value = style.getPropertyValue(property).trim();
+      return value ? `hsl(${value})` : '';
+    }
+    return '';
+  };
+
   return {
-    primary: isDark ? 'hsl(210 40% 70%)' : 'hsl(210 40% 50%)',
-    primaryFaded: isDark ? 'hsl(210 40% 40%)' : 'hsl(210 40% 80%)',
-    secondary: isDark ? 'hsl(200 30% 60%)' : 'hsl(200 30% 40%)',
-    background: isDark ? 'hsl(240 10% 3.9%)' : 'hsl(0 0% 100%)',
-    grid: isDark ? 'hsl(240 3.7% 15.9%)' : 'hsl(240 4.9% 83.9%)',
-    text: isDark ? 'hsl(0 0% 95%)' : 'hsl(240 10% 3.9%)',
+    primary: getCustomProperty('--chart-primary'),
+    secondary: getCustomProperty('--chart-secondary'),
+    background: getCustomProperty('--chart-background'),
+    grid: getCustomProperty('--chart-grid'),
+    text: getCustomProperty('--chart-text'),
+    lineColor: getCustomProperty('--chart-line-color'),
+    lineColorMuted: getCustomProperty('--chart-line-color-muted'),
+    gradientStart: getCustomProperty('--chart-gradient-start'),
+    gradientEnd: getCustomProperty('--chart-gradient-end'),
   };
 }

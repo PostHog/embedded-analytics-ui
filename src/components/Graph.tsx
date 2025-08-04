@@ -9,8 +9,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { Skeleton } from './ui/skeleton';
-import { cn } from '../lib/utils';
-import { formatNumber } from '../lib/utils';
+import { cn, formatNumber, getChartColors } from '../lib/utils';
 import type { GraphResponse, ErrorResponse } from '../types/schemas';
 
 interface GraphProps {
@@ -118,6 +117,8 @@ export function Graph({
   className,
   height = 300,
 }: GraphProps) {
+  const colors = getChartColors();
+
   const chartData = useMemo(() => {
     if (!data?.points) return [];
 
@@ -182,8 +183,16 @@ export function Graph({
                   x2="0"
                   y2="1"
                 >
-                  <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.4} />
-                  <stop offset="95%" stopColor="#3b82f6" stopOpacity={0.05} />
+                  <stop
+                    offset="5%"
+                    stopColor={colors.lineColor}
+                    stopOpacity={0.4}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor={colors.lineColor}
+                    stopOpacity={0.05}
+                  />
                 </linearGradient>
                 <linearGradient
                   id="previousGradient"
@@ -192,8 +201,16 @@ export function Graph({
                   x2="0"
                   y2="1"
                 >
-                  <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.08} />
-                  <stop offset="95%" stopColor="#3b82f6" stopOpacity={0.01} />
+                  <stop
+                    offset="5%"
+                    stopColor={colors.lineColorMuted}
+                    stopOpacity={0.08}
+                  />
+                  <stop
+                    offset="95%"
+                    stopColor={colors.lineColorMuted}
+                    stopOpacity={0.01}
+                  />
                 </linearGradient>
               </defs>
 
@@ -240,7 +257,7 @@ export function Graph({
                 <Area
                   type="monotone"
                   dataKey="previousValue"
-                  stroke="#3b82f6"
+                  stroke={colors.lineColorMuted}
                   strokeWidth={1.5}
                   fill="url(#previousGradient)"
                   strokeOpacity={0.15}
@@ -252,7 +269,7 @@ export function Graph({
                 <Area
                   type="monotone"
                   dataKey="value"
-                  stroke="#3b82f6"
+                  stroke={colors.lineColor}
                   strokeWidth={3}
                   fill="url(#currentGradient)"
                   strokeOpacity={1}

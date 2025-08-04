@@ -184,6 +184,45 @@ export const CompleteDashboard: Story = {
   },
 };
 
+export const CompleteDashboardDark: Story = {
+  render: () => (
+    <div className="dark">
+      <div className="bg-background text-foreground min-h-screen p-6">
+        <div className="space-y-8 max-w-6xl">
+          <div>
+            <BigNumbers
+              data={bigNumbersData}
+              onNumberClick={key => console.log('Clicked:', key)}
+            />
+          </div>
+
+          <div>
+            <Graph data={graphData} height={300} />
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Pages</h2>
+            <Table
+              data={tableData}
+              onRowClick={row => console.log('Clicked row:', row)}
+              currentPage={1}
+              pageSize={10}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'A complete analytics dashboard in dark mode, demonstrating how semantic CSS variables adapt the theme.',
+      },
+    },
+  },
+};
+
 export const LoadingStates: Story = {
   render: () => (
     <div className="space-y-8 max-w-6xl">

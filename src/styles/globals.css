@@ -33,12 +33,15 @@
     --chart-text: 240 10% 3.9%;
     --chart-gradient-start: 210 40% 50%;
     --chart-gradient-end: 210 40% 95%;
+    --chart-line-color: 217 91% 60%;
+    --chart-line-color-muted: 217 91% 60%;
 
     /* Analytics specific colors */
     --analytics-positive: 142 76% 36%;
     --analytics-negative: 0 84% 60%;
     --analytics-neutral: 240 3.8% 46.1%;
     --analytics-fill-background: 240 4.8% 95.9%;
+    --table-fill-color: 217 91% 60%;
   }
 
   .dark {
@@ -70,12 +73,15 @@
     --chart-text: 0 0% 95%;
     --chart-gradient-start: 210 40% 70%;
     --chart-gradient-end: 210 40% 20%;
+    --chart-line-color: 217 91% 70%;
+    --chart-line-color-muted: 217 91% 70%;
 
     /* Analytics specific colors - dark mode */
     --analytics-positive: 142 70% 45%;
     --analytics-negative: 0 84% 60%;
     --analytics-neutral: 240 5% 64.9%;
     --analytics-fill-background: 240 3.7% 15.9%;
+    --table-fill-color: 217 91% 70%;
   }
 }
 
@@ -120,7 +126,7 @@
     left: 0;
     bottom: 0;
     width: calc(var(--fill-ratio) * 100%);
-    background-color: rgba(59, 130, 246, 0.08);
+    background-color: hsl(var(--table-fill-color) / 0.08);
     border-radius: 0.125rem;
     z-index: -1;
   }
