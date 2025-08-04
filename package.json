@@ -33,6 +33,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.40.0",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@storybook/addon-docs": "^9.1.0",
@@ -60,19 +61,17 @@
     "type-check": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "deploy-storybook": "pnpm build-storybook && vercel --prod",
+    "deploy-storybook": "storybook-to-ghpages",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "lint": "oxlint src",
     "lint:fix": "oxlint src --fix",
+    "test:visual": "playwright test",
+    "test:visual:update": "playwright test --update-snapshots",
     "prepare": "husky"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,js,jsx}": [
-      "oxlint --fix",
-      "prettier --write"
-    ],
-    "src/**/*.{json,css,md}": [
+    "src/**/*.{ts,tsx,js,jsx,json,css,md}": [
       "prettier --write"
     ]
   }

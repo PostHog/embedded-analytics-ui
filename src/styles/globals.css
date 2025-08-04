@@ -126,7 +126,7 @@
     left: 0;
     bottom: 0;
     width: calc(var(--fill-ratio) * 100%);
-    background-color: hsl(var(--ph-embed-table-fill-color) / 0.08);
+    background-color: hsl(var(--ph-embed-table-fill-color) / 0.25);
     border-radius: 0.125rem;
     z-index: -1;
   }

@@ -185,12 +185,12 @@ export function Graph({
                 >
                   <stop
                     offset="5%"
-                    stopColor={colors.lineColor}
+                    stopColor={colors.gradientStart}
                     stopOpacity={0.4}
                   />
                   <stop
                     offset="95%"
-                    stopColor={colors.lineColor}
+                    stopColor={colors.gradientEnd}
                     stopOpacity={0.05}
                   />
                 </linearGradient>
