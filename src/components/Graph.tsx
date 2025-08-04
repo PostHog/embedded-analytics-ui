@@ -163,11 +163,6 @@ export function Graph({
         {data.title && (
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold">{data.title}</h3>
-            {data.metric && (
-              <span className="text-sm text-muted-foreground capitalize">
-                {data.metric.replace(/_/g, ' ')}
-              </span>
-            )}
           </div>
         )}
 

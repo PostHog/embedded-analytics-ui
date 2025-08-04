@@ -153,7 +153,6 @@ export const CompleteDashboard: Story = {
   render: () => (
     <div className="space-y-8 max-w-6xl">
       <div>
-        <h2 className="text-2xl font-bold mb-4">Key Metrics</h2>
         <BigNumbers
           data={bigNumbersData}
           onNumberClick={key => console.log('Clicked:', key)}
@@ -161,12 +160,11 @@ export const CompleteDashboard: Story = {
       </div>
 
       <div>
-        <h2 className="text-2xl font-bold mb-4">Trend Analysis</h2>
         <Graph data={graphData} height={300} />
       </div>
 
       <div>
-        <h2 className="text-2xl font-bold mb-4">Top Pages</h2>
+        <h2 className="text-2xl font-bold mb-4">Pages</h2>
         <Table
           data={tableData}
           onRowClick={row => console.log('Clicked row:', row)}
@@ -190,17 +188,15 @@ export const LoadingStates: Story = {
   render: () => (
     <div className="space-y-8 max-w-6xl">
       <div>
-        <h2 className="text-2xl font-bold mb-4">Loading Key Metrics</h2>
         <BigNumbers loading />
       </div>
 
       <div>
-        <h2 className="text-2xl font-bold mb-4">Loading Chart</h2>
         <Graph loading height={300} />
       </div>
 
       <div>
-        <h2 className="text-2xl font-bold mb-4">Loading Table</h2>
+        <h2 className="text-2xl font-bold mb-4">Paths</h2>
         <Table loading />
       </div>
     </div>
@@ -218,7 +214,6 @@ export const ErrorStates: Story = {
   render: () => (
     <div className="space-y-8 max-w-6xl">
       <div>
-        <h2 className="text-2xl font-bold mb-4">Metrics Error</h2>
         <BigNumbers
           error={{
             error: 'Failed to load metrics',
@@ -228,7 +223,6 @@ export const ErrorStates: Story = {
       </div>
 
       <div>
-        <h2 className="text-2xl font-bold mb-4">Chart Error</h2>
         <Graph
           error={{
             error: 'Chart data unavailable',
@@ -239,7 +233,7 @@ export const ErrorStates: Story = {
       </div>
 
       <div>
-        <h2 className="text-2xl font-bold mb-4">Table Error</h2>
+        <h2 className="text-2xl font-bold mb-4">Paths</h2>
         <Table
           error={{
             error: 'Table data failed to load',
