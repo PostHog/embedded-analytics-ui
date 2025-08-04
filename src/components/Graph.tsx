@@ -7,7 +7,6 @@ import {
   CartesianGrid,
   Tooltip as RechartsTooltip,
   ResponsiveContainer,
-  Legend,
 } from 'recharts';
 import { Skeleton } from './ui/skeleton';
 import { cn } from '../lib/utils';
@@ -53,7 +52,8 @@ function CustomTooltip({ active, payload, label, unit }: CustomTooltipProps) {
               style={{ backgroundColor: currentPeriod.color }}
             />
             <span className="text-sm">
-              Current: {formatNumber(currentPeriod.value, 'number', false)}
+              Current period:{' '}
+              {formatNumber(currentPeriod.value, 'number', false)}
               {unit ? ` ${unit}` : ''}
             </span>
           </div>
@@ -65,7 +65,8 @@ function CustomTooltip({ active, payload, label, unit }: CustomTooltipProps) {
               style={{ backgroundColor: previousPeriod.color }}
             />
             <span className="text-sm">
-              Previous: {formatNumber(previousPeriod.value, 'number', false)}
+              Previous period:{' '}
+              {formatNumber(previousPeriod.value, 'number', false)}
               {unit ? ` ${unit}` : ''}
             </span>
           </div>
@@ -244,7 +245,6 @@ export function Graph({
                   fill="url(#previousGradient)"
                   strokeOpacity={0.15}
                   connectNulls={false}
-                  name="Previous Period"
                 />
               )}
 
@@ -257,16 +257,6 @@ export function Graph({
                   fill="url(#currentGradient)"
                   strokeOpacity={1}
                   connectNulls={false}
-                  name="Current Period"
-                />
-              )}
-
-              {hasPreviousData && hasCurrentData && (
-                <Legend
-                  wrapperStyle={{
-                    fontSize: '12px',
-                    color: 'hsl(var(--chart-text))',
-                  }}
                 />
               )}
             </AreaChart>
