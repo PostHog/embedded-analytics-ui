@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "all": true
+  },
+  "ignore": [
+    "node_modules",
+    "dist",
+    ".storybook-static"
+  ]
+} 
